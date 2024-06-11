@@ -37,3 +37,7 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+//task("customTask") {
+//    println "Hello from custom task!"
+//}
