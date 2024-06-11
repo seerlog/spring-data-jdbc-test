@@ -1,10 +1,11 @@
 spring:
   # H2 Database
   datasource:
-    driver-class-name: org.h2.Driver
-    url: 'jdbc:h2:mem:test'
-    username: sa
-    password:
+    hikari:
+      jdbc-url: jdbc:h2:mem:test
+      username: sa
+      password:
+      driver-class-name: org.h2.Driver
 
   # H2 Console
   h2:
@@ -17,8 +18,13 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: create
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.H2Dialect
-        format_sql: true
-        show_sql: true
+
+# Logging
+logging:
+  level:
+    org:
+      springframework:
+        jdbc: debug
+#          core:
+#            JdbcTemplate: DEBUG
+#            DataSourceUtils: DEBUG

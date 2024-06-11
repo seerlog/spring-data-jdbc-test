@@ -1,64 +1,40 @@
 package org.example.springboottest.domain.transaction;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.experimental.SuperBuilder;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import lombok.Builder;
+import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@SuperBuilder
-@Entity
+@Data
+@Builder
+@Table("TRAN")
 public class Transaction {
-
     @Id
-    @Column(name = "NO", nullable = false)
+    @Column("NO")
     private long no;
-
-    @Column(name = "NAME", nullable = false)
+    @Column("NAME")
     private String name;
-
-    @Column(name = "CITY", nullable = false)
+    @Column("CITY")
     private String city;
-
-    @Column(name = "STORE_NAME", nullable = false)
+    @Column("STORE_NAME")
     private String storeName;
-
-    @Column(name = "PRICE", nullable = false)
+    @Column("PRICE")
     private int price;
-
-    @Column(name = "TRADE_DT", nullable = false)
+    @Column("TRADE_DT")
     private LocalDateTime tradeDt;
-
-    @Column(name = "STATE", nullable = false)
+    @Column("STATE")
     private String state;
-
-    @Column(name = "CREATOR", nullable = false)
+    @Column("CREATOR")
     private String creator;
-
-    @Column(name = "MODIFIER")
+    @Column("MODIFIER")
     private String modifier;
-
-    @CreationTimestamp
-    @Column(name = "CREATED_DT", nullable = false)
+    @Column("CREATED_DT")
     private LocalDateTime createdDt;
-
-    @UpdateTimestamp
-    @Column(name = "MODIFIED_DT")
+    @Column("MODIFIED_DT")
     private LocalDateTime modifiedDt;
-
-    @Column(name = "IS_DELETED", nullable = false)
+    @Column("IS_DELETED")
     private String isDeleted;
-
 }
