@@ -10,16 +10,14 @@ public class RepositoryDummyData {
     public static List<Transaction> getDummyTransactions() {
         return Collections.singletonList(
                 Transaction.builder()
-                        .name("name")
-                        .city("city")
-                        .storeName("storeName")
-                        .price(1000)
+                        .name("이과장")
+                        .city("서울")
+                        .storeName("다이소")
+                        .price(3000)
                         .tradeDt(LocalDateTime.now())
-                        .state("state")
-                        .creator("creator")
-                        .modifier("modifier")
+                        .state("결제완료")
+                        .creator("이과장")
                         .createdDt(LocalDateTime.now())
-                        .modifiedDt(LocalDateTime.now())
                         .isDeleted("N")
                         .build()
         );

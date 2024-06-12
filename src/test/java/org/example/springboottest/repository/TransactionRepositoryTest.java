@@ -1,6 +1,5 @@
 package org.example.springboottest.repository;
 
-import org.example.springboottest.domain.transaction.Transaction;
 import org.example.springboottest.domain.transaction.TransactionRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,9 +11,6 @@ import org.springframework.boot.test.autoconfigure.data.jdbc.DataJdbcTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-
-import java.time.LocalDateTime;
-import java.util.List;
 
 @DataJdbcTest
 @ActiveProfiles("test")
